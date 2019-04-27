@@ -9,7 +9,7 @@ var mongoose = require('mongoose')
 var app = express();
 
 //public
-app.use(express.static(_dirname+ 'public'));
+app.use(express.static(__dirname + '/public'));
 var port = process.env.PORT || 3000;
 
 //Database
@@ -33,8 +33,9 @@ app.set('view engine', 'handlebars');
 
 // routes
 
-var routes = require('./controller/pcnews.js')
-app.use('/', routes);
+var router = require('./controller/pcnews')
+app.use('/', router);
+
 
 //404 Error
 app.use(function(req, res){

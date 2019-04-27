@@ -18,7 +18,7 @@ var articlesSchema = new mongoose.Schema({
         type: Date, 
 		default: Date.now
     }
-})
+});
 
 var Articles = mongoose.model("Articles", articlesSchema)
 
